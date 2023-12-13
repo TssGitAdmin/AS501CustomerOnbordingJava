@@ -12,7 +12,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class A501WebClient extends BaseAPIWebClient {
-    public static A501ClientResponseModel execute(A501ClientRequestModel a501ClientRequestModel) throws Exception {
+    public  A501ClientResponseModel execute(A501ClientRequestModel a501ClientRequestModel) throws Exception {
         String signedJsonApiRequest = getSignedJsonApiRequest(a501ClientRequestModel);
 
         String jsonResponse = WebClientPost(signedJsonApiRequest, a501ClientRequestModel);
@@ -20,7 +20,7 @@ public class A501WebClient extends BaseAPIWebClient {
         return verifyAndReturnResponse(a501ClientRequestModel, jsonResponse);
     }
 
-    private static A501ClientResponseModel verifyAndReturnResponse(A501ClientRequestModel a501ClientRequestModel, String jsonResponse) throws Exception {
+    private  A501ClientResponseModel verifyAndReturnResponse(A501ClientRequestModel a501ClientRequestModel, String jsonResponse) throws Exception {
         ObjectMapper objectMapper = new ObjectMapper();
 
         EncryptedResponseModel encryptedResponseModel = objectMapper.readValue(jsonResponse, new TypeReference<EncryptedResponseModel>() {});
@@ -45,7 +45,7 @@ public class A501WebClient extends BaseAPIWebClient {
         return  a501ClientResponseModel;
     }
 
-    private static String getSignedJsonApiRequest(A501ClientRequestModel a501ClientRequestModel) throws Exception
+    private  String getSignedJsonApiRequest(A501ClientRequestModel a501ClientRequestModel) throws Exception
     {
         EncryptedRequestModel encryptedRequestModel = new EncryptedRequestModel();
 
@@ -66,7 +66,7 @@ public class A501WebClient extends BaseAPIWebClient {
         return objectMapper.writeValueAsString(encryptedRequestModel);
     }
 
-    private static void encryptRequestDataAndSessionKey(String reqJson, byte[] publicKey, EncryptedRequestModel encryptedRequestModel) throws GeneralSecurityException, IOException {
+    private  void encryptRequestDataAndSessionKey(String reqJson, byte[] publicKey, EncryptedRequestModel encryptedRequestModel) throws GeneralSecurityException, IOException {
         Key sessionKey = generateSessionKey();
 
         String encryptedReqData = encryptUsingSessionKey(sessionKey, reqJson);

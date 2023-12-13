@@ -6,6 +6,5 @@ public class RegAMLRiskSpecialCategoryDto
 {
     public String regAMLRiskSpecialCategory;
     public Integer regAMLRiskSpecialCategoryId;
-    public String regAMLRiskSpecialCategoryStartDateString;
-    public Date regAMLRiskSpecialCategoryStartDate;
+    public String regAMLRiskSpecialCategoryStartDate;
 }

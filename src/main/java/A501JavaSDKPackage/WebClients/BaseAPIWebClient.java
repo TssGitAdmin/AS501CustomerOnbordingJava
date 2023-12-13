@@ -250,10 +250,7 @@ public class BaseAPIWebClient {
             httpPost.setHeader("Content-Type", "application/json");
             httpPost.setHeader("Domain", a501ClientRequestModel.getApiURL());
             httpPost.setHeader("ApiToken", a501ClientRequestModel.getApiToken());
-            httpPost.setHeader("Cluster", "CL1_User");
-
-            if (!IsNullOrEmpty(a501ClientRequestModel.getJwtToken()))
-                httpPost.setHeader("UserToken", a501ClientRequestModel.getJwtToken());
+            httpPost.setHeader("Cluster", a501ClientRequestModel.getCluster());
 
             if (!IsNullOrEmpty(a501ClientRequestModel.getCsrfToken())) {
                 httpPost.setHeader("CSRF", a501ClientRequestModel.getCsrfToken());

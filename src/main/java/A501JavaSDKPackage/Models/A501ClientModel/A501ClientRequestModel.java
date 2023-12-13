@@ -12,12 +12,12 @@ public class A501ClientRequestModel {
     private String privateKeyPassword;
     private String apiURL;
     private String csrfToken;
-    private String jwtToken;
+    private String cluster;
     private ProxySetting proxySetting;
 
     public A501ClientRequestModel(String apiToken, String requestId, byte[] privateKey, byte[] publicKey,
                                   A501RequestDto a501RequestDto, String privateKeyPassword, String apiURL,
-                                  String csrfToken, String jwtToken, ProxySetting proxySetting) {
+                                  String cluster, String csrfToken,  ProxySetting proxySetting) {
         if (apiToken == null || apiToken.isEmpty())
             throw new IllegalArgumentException("Token cannot be empty");
         if (requestId == null || requestId.isEmpty())
@@ -41,7 +41,7 @@ public class A501ClientRequestModel {
         this.privateKeyPassword = privateKeyPassword;
         this.apiURL = apiURL;
         this.csrfToken = csrfToken;
-        this.jwtToken = jwtToken;
+        this.cluster = cluster;
         this.proxySetting = proxySetting;
     }
 
@@ -77,8 +77,8 @@ public class A501ClientRequestModel {
         return csrfToken==null ? "" : csrfToken;
     }
 
-    public String getJwtToken() {
-        return jwtToken==null ? "" : jwtToken;
+    public String getCluster() {
+        return cluster.IsNullOrEmpty() ? "CL1_User": cluster;
     }
 
     public ProxySetting getProxySetting() {
