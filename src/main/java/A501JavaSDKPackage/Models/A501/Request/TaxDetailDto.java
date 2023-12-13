@@ -5,10 +5,7 @@ import java.util.Date;
 public class TaxDetailDto
 {
     public String taxResidencyCountry;
-    public Integer taxResidencyCountryId;
     public String taxIdentificationNumber;
-    public String taxResidencyStartDateString;
-    public Date taxResidencyStartDate;
-    public String taxResidencyEndDateString;
-    public Date taxResidencyEndDate;
+    public String taxResidencyStartDate;
+    public String taxResidencyEndDate;
 }
