@@ -5,9 +5,9 @@ import java.util.List;
 
 public class CustomerDto extends CustomerCommonParameterDto {
     public CustomerDto(){
-        regAMLRiskSpecialCategoryDtoList = new ArrayList<>();
-        relatedPersonList = new ArrayList<>();
-        customerRelationDtoList = new ArrayList<>();
+        this.regAMLRiskSpecialCategoryDtoList = new ArrayList<>();
+        this.relatedPersonList = new ArrayList<>();
+        this.customerRelationDtoList = new ArrayList<>();
     }
     public String ekycOTPbased;
     public String segment;
