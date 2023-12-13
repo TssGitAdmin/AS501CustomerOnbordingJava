@@ -2,6 +2,8 @@ package A501JavaSDKPackage.Models.A501.Request;
 
 import java.util.Date;
 import java.util.List;
+import java.util.ArrayList;
+
 
 public class CustomerCommonParameterDto {
     public CustomerCommonParameterDto(){

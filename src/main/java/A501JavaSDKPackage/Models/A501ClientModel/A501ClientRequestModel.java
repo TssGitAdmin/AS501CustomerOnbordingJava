@@ -78,7 +78,7 @@ public class A501ClientRequestModel {
     }
 
     public String getCluster() {
-        return cluster.IsNullOrEmpty() ? "CL1_User": cluster;
+        return cluster.isEmpty() || cluster == null ? "CL1_User": cluster;
     }
 
     public ProxySetting getProxySetting() {
