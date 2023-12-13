@@ -5,9 +5,9 @@ import java.util.List;
 
 public class CustomerCommonParameterDto {
     public CustomerCommonParameterDto(){
-        this.taxDetailDtoList = ArrayList<>();
-        this.gstinDtoList = ArrayList<>();
-        this.documents = ArrayList<>();
+        this.taxDetailDtoList = new ArrayList<>();
+        this.gstinDtoList = new ArrayList<>();
+        this.documents = new ArrayList<>();
     }
     public String constitutionType;
     public String sourceSystemName;
