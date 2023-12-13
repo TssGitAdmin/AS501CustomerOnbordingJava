@@ -80,7 +80,7 @@ public class CustomerCommonParameterDto {
     public String notes;
     public String tags;
     public String screeningProfile;
-    Public String screeningReportWhenNil;
+    public String screeningReportWhenNil;
     public String riskProfile;
     public String adverseReputation;
     public String adverseReputationClassification;
